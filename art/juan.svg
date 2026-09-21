@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-label="Screenprint of an arch, palm and sun over the letters JUAN">
+  <rect width="600" height="760" fill="#f6f3ea"/>
+  <rect x="70" y="70" width="460" height="620" fill="#ffffff"/>
+  <path d="M170 420V250a90 90 0 0 1 180 0v170z" fill="#1d1d1b"/>
+  <rect x="236" y="330" width="48" height="90" fill="#f6f3ea"/>
+  <circle cx="152" cy="300" r="34" fill="#e2483d"/>
+  <g fill="#1f8a4c">
+    <path d="M430 210c-30-26-64-22-80-4 26-6 50 2 62 16zM430 210c34-22 66-12 78 8-28-12-54-8-68 4zM430 210c-16-34-6-66 16-78-10 28-8 54 4 68zM430 210c26 24 30 58 14 76 0-28-8-54-22-66z"/>
+  </g>
+  <rect x="424" y="206" width="12" height="214" fill="#1f8a4c"/>
+  <rect x="100" y="420" width="400" height="120" fill="#2f6fd0"/>
+  <g fill="#ffffff" font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="112" letter-spacing="10">
+    <text x="300" y="512" text-anchor="middle">JUAN</text>
+  </g>
+  <rect x="100" y="556" width="400" height="16" fill="#2f6fd0"/>
+  <rect x="100" y="590" width="256" height="10" fill="#e2483d"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 1000" role="img" aria-label="Triptych: a panel of text above two photographs of empty interiors">
+  <rect width="400" height="1000" fill="#f7f5f0"/>
+  <g>
+    <rect x="30" y="30" width="340" height="280" fill="#ffffff" stroke="#e0dcd3"/>
+    <g fill="#3a3733" font-family="'Courier New', monospace" font-size="11">
+      <text x="52" y="72">ONE SLAB — ANOTHER SLAB SET ATOP A SLAB</text>
+      <text x="52" y="92">RESTING ON THE GROUND. NO ROOF. NO DOOR.</text>
+      <text x="52" y="112">AN OPENING WHERE A ROOM WOULD BE, AND</text>
+      <text x="52" y="132">THE LIGHT ARRIVING SIDEWAYS AT NOON.</text>
+      <text x="52" y="164">THE SLAB IS NOT A FLOOR. THE GROUND IS</text>
+      <text x="52" y="184">NOT A FOUNDATION. BETWEEN THEM, WEATHER.</text>
+      <text x="52" y="216">THIS GLASS PLEASE BARELY HOLDS ITSELF</text>
+      <text x="52" y="236">UPRIGHT AGAINST A ROOM THAT REPEATS.</text>
+    </g>
+    <g stroke="#9b968c" stroke-width="1.4" fill="none">
+      <path d="M52 262h44M108 262h44M164 262h30"/>
+      <path d="M52 286h28M92 286l14-14 14 14M132 286h20l-10-14z"/>
+    </g>
+  </g>
+  <g>
+    <rect x="30" y="336" width="340" height="300" fill="#141414"/>
+    <rect x="66" y="392" width="268" height="188" fill="#1f1f1f"/>
+    <rect x="94" y="418" width="212" height="136" fill="#0b0b0b"/>
+    <g stroke="#6f6a63" stroke-width="1.2" opacity="0.8">
+      <path d="M94 418 66 392M306 418 334 392M94 554 66 580M306 554 334 580"/>
+    </g>
+    <rect x="66" y="580" width="268" height="6" fill="#3a3733"/>
+    <g fill="#c9c2b4" opacity="0.35"><rect x="120" y="446" width="160" height="80"/></g>
+  </g>
+  <g>
+    <rect x="30" y="662" width="340" height="308" fill="#e8e5dd"/>
+    <rect x="72" y="704" width="256" height="226" fill="#f6f4ef"/>
+    <rect x="132" y="740" width="136" height="190" fill="#d9d5cb"/>
+    <rect x="160" y="768" width="80" height="162" fill="#b9b4a8"/>
+    <rect x="184" y="796" width="32" height="134" fill="#8f8a7e"/>
+    <g stroke="#b6b1a5" stroke-width="1.2">
+      <path d="M72 704 132 740M328 704 268 740M72 930 132 930M328 930 268 930"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 820" role="img" aria-label="Protest poster: a raised clenched fist ringed by movement badges, titled The Most Revolutionary">
+  <defs>
+    <filter id="rv-grain"><feTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2"/>
+      <feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="600" height="820" fill="#efece4"/>
+
+  <g font-family="Georgia, 'Times New Roman', serif" fill="#d4226c">
+    <text x="300" y="104" text-anchor="middle" font-size="62" font-weight="700" letter-spacing="3">THE MOST</text>
+  </g>
+  <g font-family="Georgia, serif" fill="#1d1d1b" font-size="14" letter-spacing="1.5">
+    <text x="300" y="136" text-anchor="middle">LGBTQ POLITICS AND</text>
+    <text x="300" y="158" text-anchor="middle">THE RADICAL LEFT, 1969–1999</text>
+  </g>
+
+  <!-- raised fist -->
+  <g fill="#2b2b2b">
+    <rect x="254" y="600" width="92" height="220"/>
+    <rect x="236" y="586" width="128" height="38" rx="14"/>
+    <rect x="214" y="392" width="172" height="216" rx="38"/>
+    <rect x="206" y="468" width="104" height="58" rx="28" transform="rotate(-9 258 497)"/>
+    <circle cx="246" cy="404" r="22"/><circle cx="292" cy="398" r="23"/>
+    <circle cx="338" cy="402" r="22"/><circle cx="374" cy="416" r="19"/>
+  </g>
+  <g stroke="#efece4" stroke-width="3" stroke-linecap="round" opacity="0.5">
+    <path d="M244 430v36M290 424v42M336 428v38"/>
+    <path d="M226 540h150M226 566h150"/>
+  </g>
+
+  <!-- badges -->
+  <g>
+    <circle cx="150" cy="286" r="42" fill="#7b2fbf"/>
+    <g fill="#fff"><rect x="144" y="266" width="12" height="44" rx="5"/><rect x="134" y="284" width="32" height="10" rx="5"/></g>
+    <circle cx="112" cy="396" r="36" fill="#e2483d"/>
+    <path d="M112 378l7 15 16 2-12 11 4 16-15-9-15 9 4-16-12-11 16-2z" fill="#fff"/>
+    <circle cx="142" cy="502" r="38" fill="#1f8a4c"/>
+    <path d="M142 478a24 24 0 1 0 0 48 24 24 0 0 0 0-48zm0 11a13 13 0 1 1 0 26 13 13 0 0 1 0-26z" fill="#f1c40f"/>
+    <circle cx="452" cy="286" r="42" fill="#d4226c"/>
+    <path d="M452 310c-26-16-30-28-24-38 6-9 18-8 24 2 6-10 18-11 24-2 6 10 2 22-24 38z" fill="#fff"/>
+    <circle cx="486" cy="398" r="36" fill="#1d1d1b"/>
+    <g stroke="#f1c40f" stroke-width="6" fill="none"><path d="M470 398h32M486 382v32"/></g>
+    <circle cx="456" cy="506" r="40" fill="#2f6fd0"/>
+    <g fill="#fff"><rect x="436" y="492" width="40" height="10" rx="5"/><rect x="436" y="512" width="40" height="10" rx="5"/></g>
+    <circle cx="176" cy="616" r="34" fill="#f1c40f"/>
+    <path d="M158 630l18-30 18 30z" fill="#1d1d1b"/>
+    <circle cx="430" cy="620" r="34" fill="#efece4" stroke="#1d1d1b" stroke-width="3"/>
+    <path d="M430 600v40M414 620h32" stroke="#d4226c" stroke-width="7"/>
+  </g>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#d4226c" font-weight="700" font-size="54" letter-spacing="1">
+    <text x="300" y="754" text-anchor="middle">REVOLUTIONARY</text>
+  </g>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#1d1d1b" font-size="10" letter-spacing="0.5">
+    <text x="300" y="784" text-anchor="middle">SEPTEMBER 27 – DECEMBER 27 · COMMUNITY ARCHIVE · ADMISSION FREE</text>
+  </g>
+  <rect width="600" height="820" filter="url(#rv-grain)" opacity="0.3"/>
+</svg>

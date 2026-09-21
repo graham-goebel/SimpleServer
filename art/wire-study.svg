@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 700" role="img" aria-label="Thin white lines forming an angular figure on charcoal ground">
+  <rect width="560" height="700" fill="#2e2e2e"/>
+  <g stroke="#f2efe8" stroke-width="2.2" fill="none" stroke-linecap="round">
+    <path d="M280 120 176 300 280 420 384 300z"/>
+    <path d="M176 300 132 528 280 420 428 528 384 300"/>
+    <path d="M280 120 280 420M176 300 384 300"/>
+    <path d="M132 528 218 604M428 528 342 604M218 604 342 604"/>
+    <path d="M280 420 280 604"/>
+    <path d="M232 214 328 214M204 260 356 260"/>
+  </g>
+  <g fill="#f2efe8">
+    <circle cx="280" cy="120" r="4"/><circle cx="176" cy="300" r="4"/><circle cx="384" cy="300" r="4"/>
+    <circle cx="280" cy="420" r="4"/><circle cx="132" cy="528" r="4"/><circle cx="428" cy="528" r="4"/>
+    <circle cx="218" cy="604" r="4"/><circle cx="342" cy="604" r="4"/>
+  </g>
+</svg>

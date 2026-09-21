@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" role="img" aria-label="Muted street scene with low buildings reflected in wet pavement">
+  <defs>
+    <linearGradient id="ns-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9c4bb"/><stop offset="1" stop-color="#e3ded4"/>
+    </linearGradient>
+    <linearGradient id="ns-road" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9a958d"/><stop offset="1" stop-color="#726d66"/>
+    </linearGradient>
+    <filter id="ns-grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.14"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="800" height="560" fill="url(#ns-sky)"/>
+  <g opacity="0.9">
+    <rect x="40" y="188" width="150" height="152" fill="#b7b1a6"/>
+    <path d="M40 188 115 132 190 188z" fill="#8f897e"/>
+    <rect x="190" y="212" width="118" height="128" fill="#cfc9be"/>
+    <path d="M190 212 249 166 308 212z" fill="#a49d92"/>
+    <rect x="308" y="176" width="176" height="164" fill="#aaa499"/>
+    <path d="M308 176 396 126 484 176z" fill="#7f7a70"/>
+    <rect x="484" y="206" width="132" height="134" fill="#c6c0b5"/>
+    <path d="M484 206 550 160 616 206z" fill="#98928a"/>
+    <rect x="616" y="190" width="144" height="150" fill="#b2aca1"/>
+    <path d="M616 190 688 140 760 190z" fill="#8a847b"/>
+  </g>
+  <g fill="#5d584f" opacity="0.72">
+    <rect x="70" y="246" width="26" height="34"/><rect x="128" y="246" width="26" height="34"/>
+    <rect x="216" y="258" width="22" height="30"/><rect x="262" y="258" width="22" height="30"/>
+    <rect x="344" y="218" width="30" height="40"/><rect x="418" y="218" width="30" height="40"/>
+    <rect x="514" y="250" width="24" height="32"/><rect x="566" y="250" width="24" height="32"/>
+    <rect x="648" y="234" width="26" height="36"/><rect x="708" y="234" width="26" height="36"/>
+  </g>
+  <rect x="0" y="340" width="800" height="220" fill="url(#ns-road)"/>
+  <g opacity="0.28" transform="translate(0,680) scale(1,-1)">
+    <rect x="40" y="188" width="150" height="152" fill="#e8e3d9"/>
+    <rect x="308" y="176" width="176" height="164" fill="#ded8ce"/>
+    <rect x="616" y="190" width="144" height="150" fill="#e2dcd2"/>
+  </g>
+  <g stroke="#e6e1d7" stroke-width="2" opacity="0.35">
+    <path d="M60 470h120M240 442h90M470 492h150M660 452h90"/>
+  </g>
+  <rect width="800" height="560" filter="url(#ns-grain)" opacity="0.5"/>
+</svg>

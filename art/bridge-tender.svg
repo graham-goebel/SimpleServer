@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 800" role="img" aria-label="White clapboard bridge house under a hard blue sky">
+  <defs>
+    <linearGradient id="bt-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f86b8"/><stop offset="1" stop-color="#9dc3dd"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="800" fill="url(#bt-sky)"/>
+  <g fill="#f4f1ea">
+    <path d="M120 360 320 250 520 360 520 640 120 640z"/>
+  </g>
+  <path d="M120 360 320 250 520 360 468 360 320 292 172 360z" fill="#d8d3c8"/>
+  <g fill="#cfcabe">
+    <rect x="120" y="360" width="400" height="10"/>
+    <rect x="120" y="470" width="400" height="6"/>
+  </g>
+  <rect x="196" y="410" width="72" height="104" fill="#30506b"/>
+  <rect x="372" y="410" width="72" height="104" fill="#30506b"/>
+  <rect x="286" y="520" width="68" height="120" fill="#b9333a"/>
+  <g stroke="#2f2b27" stroke-width="7" fill="none">
+    <path d="M84 330 84 800M556 330 556 800"/>
+    <path d="M84 330 556 330"/>
+    <path d="M84 420 556 372M556 420 84 372"/>
+  </g>
+  <rect x="0" y="640" width="640" height="24" fill="#6f6a60"/>
+  <rect x="0" y="664" width="640" height="136" fill="#8e8779"/>
+  <g stroke="#7a7466" stroke-width="3" opacity="0.7">
+    <path d="M0 700h640M0 744h640M0 786h640"/>
+  </g>
+  <circle cx="518" cy="132" r="42" fill="#f6e9cf" opacity="0.85"/>
+</svg>
