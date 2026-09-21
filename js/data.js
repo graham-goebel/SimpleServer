@@ -10,7 +10,7 @@ export const PRINTS = [
   {
     id: 'ninth-street',
     title: 'Ninth Street, After Rain',
-    artist: 'Martin Tadashi',
+    artist: 'Theo Marchetti',
     year: 2023,
     medium: 'Archival pigment print on cotton rag',
     edition: 'Edition of 40',
@@ -27,7 +27,7 @@ export const PRINTS = [
   {
     id: 'bridge-tender',
     title: "Bridge Tender's House",
-    artist: 'Martin Tadashi',
+    artist: 'Theo Marchetti',
     year: 2022,
     medium: 'Archival pigment print on cotton rag',
     edition: 'Edition of 25',
@@ -95,7 +95,7 @@ export const PRINTS = [
   {
     id: 'monument',
     title: 'Monument, 4:12 AM',
-    artist: 'Martin Tadashi',
+    artist: 'Theo Marchetti',
     year: 2024,
     medium: 'Archival pigment print on baryta',
     edition: 'Edition of 15, signed',
