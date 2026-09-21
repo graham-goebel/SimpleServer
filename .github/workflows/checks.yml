@@ -1,9 +1,19 @@
 name: checks
 
 on:
+  # Pull requests cover branch work; the push trigger is for the default
+  # branch, so a PR commit gets one run rather than two. main/master are
+  # listed so a future default-branch rename keeps working.
   push:
-    branches: ['**']
+    branches:
+      - claude/add-local-server-mmJpE
+      - main
+      - master
   pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   interaction:
