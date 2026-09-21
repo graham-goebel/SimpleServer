@@ -1,138 +1,106 @@
-# SimpleServer
+# Gallery
 
-Zero-dependency local HTTP server for previewing projects in any browser or
-AI-assisted IDE (Cursor, Windsurf, VS Code, etc.).
+An interactive print wall. Ten pieces hung salon style on a single page: hover a
+frame for its label, click it and the print flies to the middle of the screen
+while the rest of the wall blurs back and a panel slides in with the details,
+the size and framing options, and an add-to-cart button.
 
-## Quick start
+No build step, no dependencies, no framework — plain HTML, CSS and ES modules.
+The artwork is inline SVG, so the whole site is about 100 KB and works offline.
 
-```bash
-# Clone / copy this repo next to your project, then:
-./serve.sh                   # serve current directory on port 8080
-./serve.sh ./dist            # serve a build output folder
-./serve.sh ./dist 3000       # custom port
+## Running it
+
+The page loads ES modules, so it needs to be served over http rather than
+opened from the filesystem:
+
+```sh
+./serve.py            # http://localhost:8000
+./serve.py 3000       # or pick a port
 ```
 
-The browser opens automatically. Press **Ctrl+C** to stop.
+Anything else that serves static files works just as well (`python3 -m
+http.server`, `npx http-server`, etc.).
 
----
+## What it does
+
+| Interaction | Behaviour |
+| --- | --- |
+| Hover a frame | Label with title, artist, year and starting price |
+| Click a frame | Print scales into view, the rest of the wall blurs, panel opens |
+| Size / framing | Price updates live; framed pieces cost more |
+| Add to cart | Drawer with quantities, line totals and a subtotal; kept in `localStorage` |
+| `←` `→` | Step to the previous or next print without leaving focus mode |
+| `Esc` | Close the cart, then leave focus mode |
+| Click the print, the backdrop, or ✕ | Back to the wall |
+| Dim the room | Swaps the wall to a dark hang; the choice is remembered |
+| `/#philly` | Deep link — opens that print directly |
+
+Every frame is a real `<button>`, so the wall is fully keyboard navigable. While
+a print holds focus the other frames drop out of the tab order, and focus moves
+into the panel. Motion respects `prefers-reduced-motion`.
+
+Below 880px the salon hang would be unreadable, so the wall becomes a single
+column and the detail panel becomes a bottom sheet.
+
+## Layout
+
+The hang is data, not CSS. Each print carries a `wall: { x, y, w }` in
+`js/data.js`, given as percentages of the wall's width. A frame's height follows
+from its artwork's aspect ratio, so the arrangement scales with the viewport
+without anything drifting out of alignment or overlapping.
+
+```js
+{
+  id: 'monument',
+  title: 'Monument, 4:12 AM',
+  art: 'art/monument.svg',
+  ratio: 700 / 900,        // the artwork's own aspect ratio
+  frame: 'black',          // black | white | oak
+  mat: 'wide',             // wide | narrow | none
+  feature: true,           // carries a price premium
+  wall: { x: 27, y: 40, w: 23 },
+}
+```
+
+## Adding a print
+
+1. Drop the artwork in `art/` — SVG, or a raster image if you prefer.
+2. Add an entry to `PRINTS` in `js/data.js` with its details and a free patch of
+   wall.
+3. Reload. Nothing else needs touching; the frame, mat, hover label, detail
+   panel and cart entry are all generated from that one object.
+
+Sizes, framing options and the base price live in the same file, in `SIZES`,
+`FRAMES` and `BASE_PRICE`.
 
 ## Files
 
-| File | Description |
-|------|-------------|
-| `serve.sh` | Smart launcher – picks the best available runtime automatically |
-| `server.py` | Python 3 server (stdlib only, no pip install needed) |
-| `server.js` | Node.js server (stdlib only, no npm install needed) |
-
----
-
-## Requirements
-
-You need **one** of the following:
-
-| Runtime | Min version | Notes |
-|---------|-------------|-------|
-| Node.js | 14+ | Preferred – best MIME support & directory listing |
-| Python  | 3.6+ | Falls back to `python3 -m http.server` if `server.py` is missing |
-| Python  | 2.7 | Last resort – uses `SimpleHTTPServer`, no auto-open |
-
----
-
-## Usage
-
-### Shell launcher (recommended)
-
-```bash
-# Serve current directory
-./serve.sh
-
-# Serve a specific folder
-./serve.sh path/to/folder
-
-# Custom port
-./serve.sh path/to/folder 5173
-
-# Skip opening the browser (CI / headless)
-NO_BROWSER=1 ./serve.sh
+```
+index.html            markup for the wall, panel, cart and tooltip
+css/styles.css        the room, the frames, and the focus choreography
+js/data.js            the collection, the price list, and the hang
+js/app.js             hover, focus mode, options, cart
+art/*.svg             ten prints
+serve.py              static server for local preview
+test/interaction.mjs  end-to-end check of every interaction above
 ```
 
-### Node.js directly
+## Checking it still works
 
-```bash
-node server.js [directory] [port]
-
-# Examples
-node server.js
-node server.js ./public
-node server.js ./public 4000
+```sh
+./serve.py 8765 &
+node test/interaction.mjs        # needs: npm i -D playwright
 ```
 
-### Python 3 directly
+26 checks covering focus mode geometry, keyboard navigation, pricing, the cart,
+persistence and deep links. `BASE=http://localhost:3000` points them at a
+different server.
 
-```bash
-python3 server.py [directory] [port]
-
-# Examples
-python3 server.py
-python3 server.py ./public
-python3 server.py ./public 4000
-```
+`.github/workflows/checks.yml` runs the same checks on every push and pull
+request, along with two cheap guards: that every SVG parses, and that the
+artwork on disk and the prints in `js/data.js` agree. Playwright is installed
+in CI only — the site itself still has no dependencies.
 
 ---
 
-## Environment variables
-
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `NO_BROWSER` | *(unset)* | Set to `1` to skip auto-opening the browser |
-| `PORT` | `8080` | Default port (overridden by the positional argument) |
-| `CI` | *(unset)* | Detected automatically – disables auto-open in CI pipelines |
-
----
-
-## Features
-
-- **Auto-open browser** – the default URL opens in your system browser on start
-- **Port collision handling** – if the requested port is busy the next free port
-  is used automatically (up to +19)
-- **Directory listing** – clean HTML index when no `index.html` is present
-- **CORS headers** – `Access-Control-Allow-Origin: *` on every response so
-  assets load correctly inside IDE embedded webviews (Cursor, Windsurf, etc.)
-- **No cache** – `Cache-Control: no-cache` so you always see the latest file
-- **Path traversal protection** – requests cannot escape the served directory
-- **Network URL** – the LAN address is printed so you can preview on a phone or
-  another device on the same Wi-Fi
-
----
-
-## Using inside an AI-assisted IDE
-
-Most AI IDEs (Cursor, Windsurf, VS Code + Copilot, etc.) embed a browser panel
-that can load `localhost` URLs. Start the server from the integrated terminal:
-
-```bash
-./serve.sh ./dist 8080
-```
-
-Then open the embedded browser / Simple Browser and navigate to
-`http://localhost:8080`.
-
-> **Tip:** set `NO_BROWSER=1` if the IDE's embedded browser should open
-> automatically instead of your system browser.
-
----
-
-## Troubleshooting
-
-**Port already in use**
-The server tries up to 20 consecutive ports. If all are busy, free a port
-manually with `lsof -ti:<port> | xargs kill` (macOS/Linux) or check Task
-Manager on Windows.
-
-**Browser doesn't open**
-Run with the URL printed in the terminal. On Linux make sure `xdg-utils` is
-installed (`sudo apt install xdg-utils`).
-
-**Files not updating**
-The server disables caching. Do a hard refresh in the browser
-(**Ctrl+Shift+R** / **Cmd+Shift+R**).
+A demo shop front. Every print, price and artist in it is invented.

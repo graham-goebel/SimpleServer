@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 900" role="img" aria-label="Obelisk at night mirrored in a still reflecting pool under a violet sky">
+  <defs>
+    <linearGradient id="mn-sky2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#31123f"/><stop offset="0.5" stop-color="#7d2f82"/><stop offset="1" stop-color="#b95a9e"/>
+    </linearGradient>
+    <linearGradient id="mn-water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#9c4a8c"/><stop offset="1" stop-color="#3a1447"/>
+    </linearGradient>
+    <linearGradient id="mn-stone" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e9dfe6"/><stop offset="0.5" stop-color="#fdf8fb"/><stop offset="1" stop-color="#cbb6c8"/>
+    </linearGradient>
+    <filter id="mn-blur"><feGaussianBlur stdDeviation="2.4"/></filter>
+    <filter id="mn-grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2"/>
+      <feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.13"/></feComponentTransfer></filter>
+  </defs>
+  <rect width="700" height="900" fill="url(#mn-sky2)"/>
+  <g opacity="0.5" fill="#ffd9f2">
+    <circle cx="120" cy="90" r="2"/><circle cx="240" cy="52" r="1.6"/><circle cx="410" cy="104" r="1.8"/>
+    <circle cx="560" cy="66" r="2.2"/><circle cx="640" cy="150" r="1.5"/><circle cx="60" cy="190" r="1.5"/>
+  </g>
+  <path d="M328 96h44l14 430h-72z" fill="url(#mn-stone)"/>
+  <path d="M328 96 350 40 372 96z" fill="#fdf8fb"/>
+  <rect x="306" y="520" width="88" height="14" fill="#e3d4e0"/>
+  <g fill="#1d0a26" opacity="0.85">
+    <rect x="0" y="534" width="700" height="46"/>
+  </g>
+  <g fill="#f6d9a6" opacity="0.75">
+    <circle cx="86" cy="548" r="5"/><circle cx="188" cy="548" r="5"/><circle cx="290" cy="548" r="5"/>
+    <circle cx="410" cy="548" r="5"/><circle cx="512" cy="548" r="5"/><circle cx="614" cy="548" r="5"/>
+  </g>
+  <rect x="0" y="580" width="700" height="320" fill="url(#mn-water)"/>
+  <g filter="url(#mn-blur)" opacity="0.62">
+    <path d="M328 584h44l14 300h-72z" fill="#f4e6f1"/>
+    <path d="M328 584 350 624 372 584z" fill="#fdf8fb"/>
+  </g>
+  <g stroke="#e9c3e4" stroke-width="1.6" opacity="0.28">
+    <path d="M40 640h620M0 700h700M60 762h580M20 826h660M120 872h460"/>
+  </g>
+  <rect width="700" height="900" filter="url(#mn-grain)" opacity="0.55"/>
+</svg>

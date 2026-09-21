@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 760" role="img" aria-label="Red screenprint of a cracked liberty bell above the word PHILLY">
+  <rect width="600" height="760" fill="#f6f3ea"/>
+  <rect x="60" y="60" width="480" height="640" fill="#c8202a"/>
+  <g fill="#f6f3ea">
+    <rect x="272" y="130" width="56" height="34" rx="6"/>
+    <path d="M196 196h208c0 0-26 30-26 128 0 72 18 132 34 160H188c16-28 34-88 34-160 0-98-26-128-26-128z"/>
+    <rect x="164" y="492" width="272" height="30" rx="8"/>
+    <ellipse cx="300" cy="540" rx="34" ry="22"/>
+  </g>
+  <path d="M300 214c-14 46 10 70-4 112s14 62 2 104" stroke="#c8202a" stroke-width="12" fill="none"/>
+  <g font-family="Helvetica, Arial, sans-serif" font-weight="700" font-size="104" letter-spacing="2" fill="#f6f3ea">
+    <text x="300" y="648" text-anchor="middle">PHILLY</text>
+  </g>
+</svg>

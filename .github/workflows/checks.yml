@@ -1,0 +1,83 @@
+name: checks
+
+on:
+  # Pull requests cover branch work; the push trigger is for the default
+  # branch, so a PR commit gets one run rather than two. main/master are
+  # listed so a future default-branch rename keeps working.
+  push:
+    branches:
+      - claude/add-local-server-mmJpE
+      - main
+      - master
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  interaction:
+    name: interaction checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Artwork parses as XML
+        run: |
+          python3 - <<'PY'
+          import glob, sys, xml.dom.minidom
+          bad = []
+          for path in sorted(glob.glob('art/*.svg')):
+              try:
+                  xml.dom.minidom.parse(path)
+                  print(f'ok   {path}')
+              except Exception as err:
+                  bad.append(f'{path}: {err}')
+          if bad:
+              print('\n'.join(bad), file=sys.stderr)
+              sys.exit(1)
+          PY
+
+      - name: Every artwork is on the wall
+        run: |
+          python3 - <<'PY'
+          import glob, re, sys
+          data = open('js/data.js').read()
+          referenced = set(re.findall(r"art: '([^']+)'", data))
+          on_disk = set(glob.glob('art/*.svg'))
+          missing = referenced - on_disk
+          orphaned = on_disk - referenced
+          for path in sorted(missing):
+              print(f'referenced but missing: {path}', file=sys.stderr)
+          for path in sorted(orphaned):
+              print(f'on disk but never hung: {path}', file=sys.stderr)
+          sys.exit(1 if missing or orphaned else 0)
+          PY
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Serve the gallery
+        run: |
+          # The log redirect matters: a background process holding the step's
+          # stdout open keeps the step from ever finishing.
+          ./serve.py 8765 > /tmp/serve.log 2>&1 &
+          for _ in $(seq 1 30); do
+            curl -sf http://localhost:8765/ > /dev/null && exit 0
+            sleep 1
+          done
+          echo "the server never came up" >&2
+          cat /tmp/serve.log >&2
+          exit 1
+
+      - name: Interaction checks
+        run: node test/interaction.mjs
+        env:
+          BASE: http://localhost:8765

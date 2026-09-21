@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 540" role="img" aria-label="Flat colour landscape of highway overpasses over marsh at dusk">
+  <defs>
+    <linearGradient id="gs-sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f2a65a"/><stop offset="0.55" stop-color="#e8705f"/><stop offset="1" stop-color="#8e4a6b"/>
+    </linearGradient>
+  </defs>
+  <rect width="760" height="540" fill="url(#gs-sky)"/>
+  <circle cx="560" cy="212" r="56" fill="#fbe0a2"/>
+  <g fill="#5c3358" opacity="0.9">
+    <rect x="0" y="286" width="760" height="18"/>
+    <rect x="70" y="304" width="18" height="92"/><rect x="238" y="304" width="18" height="92"/>
+    <rect x="406" y="304" width="18" height="92"/><rect x="574" y="304" width="18" height="92"/>
+  </g>
+  <g fill="#41253f">
+    <path d="M0 330h760v14H0z" opacity="0.5"/>
+    <rect x="0" y="352" width="760" height="12"/>
+    <rect x="128" y="364" width="14" height="60"/><rect x="330" y="364" width="14" height="60"/><rect x="520" y="364" width="14" height="60"/>
+  </g>
+  <rect x="0" y="396" width="760" height="144" fill="#2c1a31"/>
+  <g fill="#6d4b6b" opacity="0.7">
+    <path d="M0 428c60-12 120 8 180-4s120-16 180-2 120 18 180 4 140-10 220 2v-14H0z"/>
+  </g>
+  <g fill="#f7c873" opacity="0.85">
+    <rect x="96" y="292" width="26" height="6"/><rect x="300" y="292" width="26" height="6"/><rect x="498" y="292" width="26" height="6"/>
+  </g>
+  <g stroke="#e8a3a0" stroke-width="2" opacity="0.4">
+    <path d="M40 470h120M280 496h140M520 462h160"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 560" role="img" aria-label="Dark abstract field of fine overlapping grasses">
+  <defs>
+    <linearGradient id="fg-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3b3a36"/><stop offset="1" stop-color="#22221f"/>
+    </linearGradient>
+    <filter id="fg-noise"><feTurbulence type="turbulence" baseFrequency="0.02 0.6" numOctaves="4" seed="7"/>
+      <feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer></filter>
+    <filter id="fg-soft"><feGaussianBlur stdDeviation="0.6"/></filter>
+  </defs>
+  <rect width="820" height="560" fill="url(#fg-bg)"/>
+  <rect width="820" height="560" filter="url(#fg-noise)" opacity="0.65"/>
+  <g stroke="#a39d8c" stroke-width="1" fill="none" opacity="0.68" filter="url(#fg-soft)">
+    <path d="M20 560c14-150 4-230 26-330M70 560c-4-170 10-250 30-320M120 560c16-140 2-240 22-318M170 560c-10-160 6-250 26-330M220 560c12-150 0-240 24-322M270 560c-8-170 8-250 28-326M320 560c14-150 2-236 22-330M370 560c-6-160 6-246 26-324M420 560c12-148 0-238 24-330M470 560c-8-168 8-248 28-322M520 560c14-150 2-240 22-326M570 560c-6-158 6-244 26-330M620 560c12-150 0-238 24-322M670 560c-8-168 8-248 28-328M720 560c14-148 2-240 22-324M770 560c-6-160 6-246 26-330"/>
+  </g>
+  <g stroke="#ded7c2" stroke-width="0.9" fill="none" opacity="0.5">
+    <path d="M46 560c10-190 0-260 18-340M196 560c-8-196 6-266 24-338M396 560c10-190 0-262 18-344M596 560c-8-194 6-264 24-340M746 560c10-188 0-260 18-342"/>
+  </g>
+  <rect width="820" height="560" fill="#12110f" opacity="0.1"/>
+</svg>
