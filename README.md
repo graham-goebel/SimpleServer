@@ -93,7 +93,13 @@ node test/interaction.mjs        # needs: npm i -D playwright
 ```
 
 26 checks covering focus mode geometry, keyboard navigation, pricing, the cart,
-persistence and deep links.
+persistence and deep links. `BASE=http://localhost:3000` points them at a
+different server.
+
+`.github/workflows/checks.yml` runs the same checks on every push and pull
+request, along with two cheap guards: that every SVG parses, and that the
+artwork on disk and the prints in `js/data.js` agree. Playwright is installed
+in CI only — the site itself still has no dependencies.
 
 ---
 
